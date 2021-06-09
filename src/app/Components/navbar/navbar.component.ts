@@ -3,6 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material';
+import { SearchBottomSheetComponent } from '../search-bottom-sheet/search-bottom-sheet.component';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -15,8 +18,10 @@ export class NavbarComponent implements OnInit {
       map(result=>result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
-  //private bottomSheet:MatBottomSheet
+  constructor(private breakpointObserver: BreakpointObserver,private bottomSheet:MatBottomSheet) { }
+  showSearch():void{
+    this.bottomSheet.open(SearchBottomSheetComponent);
+  }
 
   ngOnInit() {
   }

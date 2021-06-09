@@ -15,19 +15,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayerComponent } from './Components/player/player.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { SearchBottomSheetComponent } from './Components/search-bottom-sheet/search-bottom-sheet.component';
+import { RecentGridComponent } from './Components/recent-grid/recent-grid.component';
+import { LoginComponent } from './Components/login/login.component';
+import { MovieComponent } from './Components/movie/movie.component';
+
 
 const appRoutes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
-  {path:'login',component:PlayerComponent},
+  {path:'login',component:LoginComponent},
   {path:'player',component:PlayerComponent},
-  {path:'recent',component:PlayerComponent}
+  {path:'recent',component:RecentGridComponent},
+  {path:'movie/:UID',component:MovieComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchBottomSheetComponent,
+    RecentGridComponent,
+    LoginComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
@@ -44,10 +54,11 @@ const appRoutes: Routes = [
   ],
   providers: [
     CookieService,
-    {provide:'API_ENDPOINT',useValue:'http://api.outlawdesigns.io:9669/movie/'},
-    {provide:'API_ENDPOINT',useValue:'http://loe.outlawdesigns.io/'},
-    {provide:'AUTH_ENDPOINT',useValue:'http://api.outlawdesigns.io:9669/'}
+    {provide:'API_ENDPOINT',useValue:'https://api.outlawdesigns.io:9669/movie/'},
+    {provide:'LOE_DOMAIN',useValue:'https://loe.outlawdesigns.io/'},
+    {provide:'AUTH_ENDPOINT',useValue:'https://api.outlawdesigns.io:9669/'}
   ],
+  entryComponents:[SearchBottomSheetComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,3 +10,23 @@
   margin-right: auto;
   width: 50%;
 }
+.gridItem{
+  max-width: 100%;
+  height: auto;
+}
+.card{
+  max-width: 400px;
+  margin: 2%;
+}
+.coverPreview{
+  justify-content:space-around;
+  max-width: 250px;
+  max-width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+ul#propertyList li{
+  display: inline;
+}

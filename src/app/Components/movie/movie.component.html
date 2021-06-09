@@ -1,0 +1,24 @@
+<mat-card class="card" *ngFor="let movie of movies">
+  <mat-card-title>{{movie.title}}</mat-card-title>
+  <mat-card-subtitle>
+    <a>{{movie.genre}}</a>,
+    <a>{{movie.genre2}}</a>,
+    <a>{{movie.genre3}}</a>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <img [src]="movie.cover_path" class="coverPreview">
+    <ul id="propertyList">
+      <li>{{movie.director}}, </li>
+      <li>{{movie.relyear}}, </li>
+      <li>{{movie.run_time}} minutes, </li>
+      <li>{{movie.rating}}</li>
+    </ul>
+    <p>{{movie.description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="button-row play-btns">
+      <button mat-raised-button color="primary" (click)="play(movie)">Play</button>
+      <button mat-raised-button color="accent">Queue</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

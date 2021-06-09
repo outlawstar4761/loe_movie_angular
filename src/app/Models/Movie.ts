@@ -23,5 +23,7 @@ export class Movie {
     this.cover_path = obj && obj.cover_path || null;
     this.file_path = obj && obj.file_path || null;
     this.rating = obj && obj.rating || null;
+    this.description = obj && obj.description || null;
+    this.run_time = obj && obj.run_time || null;
   }
 }

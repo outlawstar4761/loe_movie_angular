@@ -1,5 +1,4 @@
 <vg-player>
-  <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
-    <source src="http://loe.outlawdesigns.io/Video/Movies/1408/movie.mkv">
+  <video [vgMedia]="media" [src]="activeMedia.file_path" #media id="singleVideo" preload="auto" controls>
   </video>
 </vg-player>

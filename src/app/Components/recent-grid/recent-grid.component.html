@@ -1,0 +1,5 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let movie of recentMovies" layout-fill>
+    <a routerLink='/movie/{{movie.UID}}'><img [src]="movie.cover_path" class="gridItem"></a>
+  </mat-grid-tile>
+</mat-grid-list>
