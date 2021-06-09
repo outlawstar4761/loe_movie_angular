@@ -19,6 +19,7 @@ import { SearchBottomSheetComponent } from './Components/search-bottom-sheet/sea
 import { RecentGridComponent } from './Components/recent-grid/recent-grid.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MovieComponent } from './Components/movie/movie.component';
+import { SearchResultsComponent } from './Components/search-results/search-results.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'player',component:PlayerComponent},
   {path:'recent',component:RecentGridComponent},
-  {path:'movie/:UID',component:MovieComponent}
+  {path:'movie/:UID',component:MovieComponent},
+  {path:'search/:key/:value',component:SearchResultsComponent}
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     SearchBottomSheetComponent,
     RecentGridComponent,
     LoginComponent,
-    MovieComponent
+    MovieComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

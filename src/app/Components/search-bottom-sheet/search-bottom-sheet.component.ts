@@ -20,8 +20,7 @@ export class SearchBottomSheetComponent implements OnInit {
   constructor(private bottomSheetRef:MatBottomSheetRef<NavbarComponent>,private router:Router) { }
 
   onSubmit(value):void{
-    let path = value.option + '/' + value.query;
-    this.router.navigateByUrl(path);
+    this.router.navigate(['/search', value.option, value.query]);
     this.bottomSheetRef.dismiss();
   }
 
